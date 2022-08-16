@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "vN+2y3MeUd8ZmjyrLsMaSHrVBxaXVV3SvZMJBZZ7n+BZu+b1P3KLPnNiDqLXrfmFQWyqhSKNow91zRC4HHAmhg==",
+  "success": true,
+  "projectFilePath": "c:\\personal_projects\\buildcv\\buildcv_db\\buildcv_db.sqlproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\abdul\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.0\\microsoft.netframework.referenceassemblies.1.0.0.nupkg.sha512",
+    "C:\\Users\\abdul\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net46\\1.0.0\\microsoft.netframework.referenceassemblies.net46.1.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

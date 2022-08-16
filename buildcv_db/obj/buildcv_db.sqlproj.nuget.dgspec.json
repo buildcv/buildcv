@@ -1,0 +1,45 @@
+{
+  "format": 1,
+  "restore": {
+    "c:\\personal_projects\\buildcv\\buildcv_db\\buildcv_db.sqlproj": {}
+  },
+  "projects": {
+    "c:\\personal_projects\\buildcv\\buildcv_db\\buildcv_db.sqlproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "c:\\personal_projects\\buildcv\\buildcv_db\\buildcv_db.sqlproj",
+        "projectName": "buildcv_db",
+        "projectPath": "c:\\personal_projects\\buildcv\\buildcv_db\\buildcv_db.sqlproj",
+        "packagesPath": "C:\\Users\\abdul\\.nuget\\packages\\",
+        "outputPath": "c:\\personal_projects\\buildcv\\buildcv_db\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\abdul\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net46"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net46": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net46": {
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.0, )"
+            }
+          }
+        }
+      }
+    }
+  }
+}
