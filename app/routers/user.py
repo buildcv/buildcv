@@ -5,10 +5,12 @@ from pydantic import BaseModel
 
 
 
-class User(BaseModel):
+class UserBase(BaseModel):
     uid: str
     name: str
     email: str
     birthday: datetime
+    class Config:
+        orm_mode = True
 
 
