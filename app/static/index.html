@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  
+
+
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <h1>Test document1 dwew</h1>
+
+<!-- create login button -->
+<!-- style button using tailwind -->
+
+
+
+<script type="module">
+
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js'
+import { getAuth , GoogleAuthProvider ,  signInWithPopup , onAuthStateChanged  } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js'
+
+
+// add variables into window object
+
+
+
+
+
+
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBeQbyli4ddWjKAy3mQqgq1ti4Q2guTU-Q",
+  authDomain: "veemu-33e81.firebaseapp.com",
+  databaseURL: "https://veemu-33e81.firebaseio.com",
+  projectId: "veemu-33e81",
+  storageBucket: "veemu-33e81.appspot.com",
+  messagingSenderId: "63754329345",
+  appId: "1:63754329345:web:e707cbbc8176f060a14f00"
+};
+const app = initializeApp(firebaseConfig);
+
+console.log(app)
+
+const provider = new GoogleAuthProvider();
+const auth = getAuth();
+
+window.initializeApp = initializeApp
+window.getAuth = getAuth
+window.GoogleAuthProvider = GoogleAuthProvider
+window.signInWithPopup = signInWithPopup
+window.onAuthStateChanged = onAuthStateChanged
+
+window.provider = provider
+window.auth = auth
+window.currentUser = auth.currentUser 
+
+console.log(auth.currentUser)
+
+onAuthStateChanged(auth, (googleUser) => {
+  if (googleUser) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+
+    console.log(`Authenticated user with uid: ${googleUser.uid}`);
+    googleUser.getIdToken().then(idToken => {
+      console.log(idToken);
+    });
+
+    
+    const user = {}
+    user.uid = googleUser.uid
+    user.name = googleUser.displayName
+    user.email = googleUser.email
+    user.id =  0
+    // create date format yyyy/mm/dd
+    const date = new Date()
+    const year = date.getFullYear()
+    const month = date.getMonth() + 1
+    const day = date.getDate()
+    user.birthday = `${year}-${month}-${day}`
+
+    
+
+    window.user = user
+
+
+
+    // http://localhost:8000/users
+
+    
+    console.log(JSON.stringify(user))
+
+    fetch(`http://localhost:8000/users/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    })
+
+
+
+    const userDiv = document.createElement('div')
+    // center the div
+    userDiv.style.textAlign = 'center'
+    userDiv.innerHTML = `
+     <div id="user-info">
+        <h1>${user.name}</h1>
+        <p>${user.email}</p>
+        </div>
+    `
+    document.body.appendChild(userDiv)
+
+
+  } else {
+    // User is signed out
+    // ...
+    // remove user div if it exists
+    const userDiv = document.getElementById('user-info')
+    if (userDiv) {
+        userDiv.remove()
+    }
+  }
+});
+
+
+function signIn(){
+    signInWithPopup(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const googleUser = result.user;
+    const user = {}
+
+    user.displayName = googleUser.displayName
+    user.email = googleUser.email
+    user.uid = googleUser.uid
+
+    window.user = user
+
+    
+
+
+
+
+    
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+  });
+
+}
+
+function signOut(){
+    auth.signOut()
+    .then(()=>{
+        console.log('User signed out')
+    }).catch((error)=>{
+        console.log(error)
+    } )
+}
+
+window.signIn = signIn
+window.signOut = signOut
+
+
+
+</script>
+
+
+<!-- 
+    create sign in button using firebase
+-->
+<!-- center the button -->
+<!-- style button using tailwind -->
+<div class="content-center">
+    <button onclick="window.signIn()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+        Sign In
+    </button>
+    <button onclick="window.signOut()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+        Sign out
+    </button>
+</div>
+
+
+
+
+</body>
+</html>
