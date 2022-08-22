@@ -12,7 +12,7 @@ from sqlalchemy.ext.declarative import declarative_base
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
-from routers.user import User
+from schemas.user import User
 
 import pyodbc 
 import urllib

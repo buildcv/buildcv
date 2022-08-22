@@ -13,32 +13,21 @@ from sqlalchemy import insert
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from database.sqlserver import get_db
 
 from models.user import User
 
-import urllib
 
 
-server = 'localhost,1433' 
-database = 'resume' 
-username = 'sa' 
-password = 'p3dc68f2Q@#' 
-TrustServerCertificate = 'yes'
-encrypt = 'yes'
-import random
-
-params = urllib.parse.quote_plus(f"DRIVER={'ODBC Driver 18 for SQL Server'};SERVER={server};DATABASE={database};UID={username};PWD={password};TrustServerCertificate={TrustServerCertificate};Encrypt={encrypt}")
-
-# create sql server engine 
-engine = create_engine(f"mssql+pyodbc:///?odbc_connect={params}")
 
 
-user = User(name='Abdullah', birthday=datetime.datetime.now(), uid='newUID',email='Abdullah@gmail.com')
+
+
+user = User(name='Abdullah', birthday=datetime.datetime.now(), uid='hasan',email='Abdullah@gmail.com')
 
 
 # save user to database
-Session = sessionmaker(bind=engine)
-session = Session()
+session = next(get_db())
 session.add(user)
 session.commit()
 session.close()

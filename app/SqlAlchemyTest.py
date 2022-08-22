@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine, MetaData, Table
 from sqlalchemy.orm import mapper
 from sqlalchemy.sql import select
-from routers.user import User
+from schemas.user import User
 
 import pyodbc 
 import urllib
