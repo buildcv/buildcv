@@ -15,7 +15,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 # Server info 
-server = 'localhost,1433' 
+server = 'sqlserver,1433' 
 database = 'resume' 
 username = 'sa' 
 password = 'p3dc68f2Q@#' 

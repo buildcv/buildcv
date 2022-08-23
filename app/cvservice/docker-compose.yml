@@ -1,0 +1,26 @@
+version: "3.3"
+
+services:
+  cvapp:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: cvapp:latest
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-CU15-ubuntu-20.04
+    container_name: sqlserver-dev
+    volumes:
+      - sqlserver-dev:/var/opt/mssql
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD}
+      MSSQL_AGENT_ENABLED: 
+    ports:
+      - 1433:1433
+volumes:
+  sqlserver-dev:
+    external: true
+      
+
+      
+
