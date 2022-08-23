@@ -22,3 +22,22 @@ cursor = conn.cursor()
 cursor.execute("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES")
 for row in cursor.fetchall():
     print(row)
+
+
+
+def extract_shapefile(shapefile_path):
+    """
+    Extract the data from a shapefile into a pandas dataframe.
+    """
+    import geopandas as gpd
+    import pandas as pd
+    # Read the shapefile
+    gdf = gpd.read_file(shapefile_path)
+    # Extract the geometry
+    geometry = gdf.geometry
+    # Extract the dataframe
+    df = gdf.drop(columns=['geometry'])
+    # Create a new dataframe with the geometry and data
+    df = pd.concat([geometry, df], axis=1)
+    return df
+    
