@@ -3,8 +3,7 @@ CREATE TABLE [dbo].[address] (
     [country] VARCHAR (20) NOT NULL,
     [city]    VARCHAR (20) NOT NULL,
     [user_id] INT          NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC),
-    FOREIGN KEY ([user_id]) REFERENCES [dbo].[users] ([Id])
+    PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 GO
 
