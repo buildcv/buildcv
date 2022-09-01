@@ -15,19 +15,37 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from database.sqlserver import get_db
 
-from models.user import User
+from data.models import CVLookup  , User
+
+from create_random_users import create_random_users , create_user
+
+
+
+def insert_into_user_model():
+    user = create_user()
+    db = next(get_db())
+    db.add(user)
+    db.commit()
+    db.close()
+    return user
+
+
+
+def insert_users_into_user_model(count):
+    users = create_random_users(count)
+    db = next(get_db())
+    db.add_all(users)
+    db.commit()
+    db.close()
+    return users
 
 
 
 
 
 
+# Single user insert test
+# insert_into_user_model()
 
-user = User(name='Abdullah', birthday=datetime.datetime.now(), uid='hasan',email='Abdullah@gmail.com')
 
-
-# save user to database
-session = next(get_db())
-session.add(user)
-session.commit()
-session.close()
+insert_users_into_user_model(100)

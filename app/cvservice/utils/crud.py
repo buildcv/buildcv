@@ -1,13 +1,23 @@
 from http.client import HTTPException
 import sys
 import os
-from unicodedata import name 
+from unicodedata import name
+from data.models import User
+
+from schemas.cvlookup import CvLookupBase 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from models.user import User
 from schemas.user import UserBase
 
 from database.sqlserver import get_db
 
+
+
+
+
+def create_cv_lookup(cv_lookup_base:CvLookupBase):
+    
+
+    pass
 
 
 def get_all_users():
@@ -29,7 +39,7 @@ def create_user(base_user: UserBase):
         raise HTTPException(status_code=400, detail="User already exists")
     else:
         # create new user
-        user = User(name=base_user.name, birthday=base_user.birthday, uid=base_user.uid, email=base_user.email)
+        user = User(name=base_user.name, registration_date=base_user.registration_date, uid=base_user.uid, email=base_user.email)
         # save user to database
         db.add(user)
         db.commit()

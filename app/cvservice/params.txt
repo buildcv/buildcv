@@ -1,0 +1,1 @@
+DRIVER%3DODBC+Driver+18+for+SQL+Server%3BSERVER%3Dsqlserver%2C1433%3BDATABASE%3Dresume%3BUID%3Dsa%3BPWD%3Dp3dc68f2Q%40%23%3BTrustServerCertificate%3Dyes%3BEncrypt%3Dyes

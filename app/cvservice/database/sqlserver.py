@@ -27,6 +27,10 @@ params = urllib.parse.quote_plus(f"DRIVER={'ODBC Driver 18 for SQL Server'};SERV
 engine = create_engine(f"mssql+pyodbc:///?odbc_connect={params}")
 
 
+
+# db url as string 
+
+
 # create session 
 Session = sessionmaker(bind=engine)
 

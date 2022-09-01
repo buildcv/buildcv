@@ -15,6 +15,7 @@ googleapis-common-protos==1.56.4
 SQLAlchemy==1.4.40
 aiofiles
 pyodbc
+Faker
 
 
 
