@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\personal_projects\\buildcv\\buildcv_db\\buildcv_db.sqlproj": {}
+    "c:\\personal_projects\\buildcv\\buildcv_db\\build_cv\\build_cv.sqlproj": {}
   },
   "projects": {
-    "c:\\personal_projects\\buildcv\\buildcv_db\\buildcv_db.sqlproj": {
+    "c:\\personal_projects\\buildcv\\buildcv_db\\build_cv\\build_cv.sqlproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\personal_projects\\buildcv\\buildcv_db\\buildcv_db.sqlproj",
-        "projectName": "buildcv_db",
-        "projectPath": "c:\\personal_projects\\buildcv\\buildcv_db\\buildcv_db.sqlproj",
+        "projectUniqueName": "c:\\personal_projects\\buildcv\\buildcv_db\\build_cv\\build_cv.sqlproj",
+        "projectName": "build_cv",
+        "projectPath": "c:\\personal_projects\\buildcv\\buildcv_db\\build_cv\\build_cv.sqlproj",
         "packagesPath": "C:\\Users\\abdul\\.nuget\\packages\\",
-        "outputPath": "c:\\personal_projects\\buildcv\\buildcv_db\\obj\\",
+        "outputPath": "c:\\personal_projects\\buildcv\\buildcv_db\\build_cv\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [

@@ -1,0 +1,10 @@
+c:\personal_projects\buildcv\buildcv_db\build_cv\bin\Debug\build_cv.dacpac
+c:\personal_projects\buildcv\buildcv_db\build_cv\bin\Debug\build_cv.dll
+c:\personal_projects\buildcv\buildcv_db\build_cv\bin\Debug\build_cv.pdb
+c:\personal_projects\buildcv\buildcv_db\build_cv\obj\Debug\build_cv.sqlprojAssemblyReference.cache
+c:\personal_projects\buildcv\buildcv_db\build_cv\obj\Debug\Model.xml
+c:\personal_projects\buildcv\buildcv_db\build_cv\obj\Debug\refactor.xml
+c:\personal_projects\buildcv\buildcv_db\build_cv\obj\Debug\postdeploy.sql
+c:\personal_projects\buildcv\buildcv_db\build_cv\obj\Debug\predeploy.sql
+c:\personal_projects\buildcv\buildcv_db\build_cv\obj\Debug\build_cv.dll
+c:\personal_projects\buildcv\buildcv_db\build_cv\obj\Debug\build_cv.pdb

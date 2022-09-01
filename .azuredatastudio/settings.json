@@ -1,0 +1,5 @@
+{
+    "dataworkspace.excludedProjects": [
+        "buildcv_db/buildcv_db.sqlproj"
+    ]
+}
