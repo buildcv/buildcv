@@ -34,7 +34,7 @@ def create_cv_lookup():
     
 
 
-# create_cv_lookup()
+create_cv_lookup()
 
 
 

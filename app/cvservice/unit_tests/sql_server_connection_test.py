@@ -4,36 +4,29 @@ from sqlalchemy.sql import select
 import sys
 import os 
 import datetime
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
-
-
-
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-
-from schemas.user import User
-
-import pyodbc 
-import urllib
+from database.sqlserver import engine
 
 
-server = 'localhost,1433' 
-database = 'resume' 
-username = 'sa' 
-password = 'p3dc68f2Q@#' 
-TrustServerCertificate = 'yes'
-encrypt = 'yes'
-import random
+
+# check sql server connection 
+def check_sql_server_connection():
+    db = engine.connect()
+    db.execute("SELECT 1")
+    db.close()
+    print("SQL Server connection successful")
+
+check_sql_server_connection()
 
 
-params = urllib.parse.quote_plus(f"DRIVER={'ODBC Driver 18 for SQL Server'};SERVER={server};DATABASE={database};UID={username};PWD={password};TrustServerCertificate={TrustServerCertificate};Encrypt={encrypt}")
+# list all tables from sql server
+def list_all_tables():
+    metadata = MetaData()
+    metadata.reflect(engine)
+    print(metadata.tables.keys())
 
 
-# create sql server engine 
-engine = create_engine(f"mssql+pyodbc:///?odbc_connect={params}")
+list_all_tables()
 
-# list tables 
-metadata = MetaData()
-metadata.reflect(bind=engine)
-print(metadata.tables.keys())
+
