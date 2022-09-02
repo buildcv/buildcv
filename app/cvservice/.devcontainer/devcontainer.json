@@ -7,7 +7,7 @@
 
 	"customizations": {
 		"vscode": {
-		  "extensions": ["dbaeumer.vscode-eslint","GitHub.copilot","ms-python.python","natqe.reload"]
+		  "extensions": ["dbaeumer.vscode-eslint","GitHub.copilot","ms-python.python","natqe.reload","GitHub.copilot-labs"]
 		}
 	  } ,
 
