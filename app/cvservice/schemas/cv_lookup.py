@@ -3,10 +3,9 @@ from datetime import date, datetime, time, timedelta
 
 from pydantic import BaseModel
 
-
-class CvLookupBase(BaseModel):
+# create cv lookup model 
+class CVLookup(BaseModel):
     user_uid: str
     composite_cv_id: str
-    class Config:
-        orm_mode = True
-
+    users: str
+    cvlookups: str

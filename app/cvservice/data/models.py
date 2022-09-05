@@ -196,7 +196,6 @@ class UserLanguages(Base):
     user_uid = Column(String(120), primary_key=True,nullable=False)
     composite_cv_id_reference = Column(String(130), ForeignKey('cv_lookup.composite_cv_id'), nullable=False , primary_key=True)
     user_language_label = Column(String(50), nullable=False)
-    cv_t_reference = Column(String(150), nullable=False)
     PrimaryKeyConstraint (user_uid, composite_cv_id_reference)
 
 

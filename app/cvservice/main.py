@@ -3,7 +3,9 @@ from fastapi.staticfiles import StaticFiles
 
 # import user from routers 
 from schemas.user import UserBase
-from utils.crud import get_all_users , create_user
+from schemas.education import Education as EducationSchema 
+
+from utils.crud import create_education_entry, get_all_users , create_user
 from schemas.user import UserBase
 app = FastAPI()
 
@@ -29,3 +31,13 @@ async def create_new_user(user: UserBase):
 
     return user
 
+
+
+
+@app.post("/education")
+async def dashboard(education: EducationSchema):
+    print(education)
+
+    created_education = create_education_entry(education)
+
+    return created_education

@@ -30,18 +30,4 @@ def get_user_id_from_decoded_token(decoded_token):
 print(get_user_id_from_decoded_token(verify_id_token()))
 
 
-# for user in users:
-#     print(user.uid)
-#     print(user.display_name)
-#     print(user.email)
-#     print(user.phone_number)
-#     print(user.photo_url)
-#     print(user.email_verified)
-#     print(user.disabled)
-#     print(user.custom_claims)
-#     print(user.provider_data)
-#     print(user.password_hash)
-#     print(user.provider_id)
-#     print(user.tenant_id)
-#     print(user.uid)
-    
+ 
