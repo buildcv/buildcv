@@ -1,6 +1,5 @@
 import email
 from sqlalchemy import create_engine, MetaData, Table
-from sqlalchemy.orm import mapper
 from sqlalchemy.sql import select
 import sys
 import os 

@@ -24,7 +24,7 @@ Base = declarative_base()
 
 class CVLookup(Base):
     __tablename__ = 'cv_lookup'
-    user_uid = Column(String(120),ForeignKey('users.uid'), primary_key=True)
+    user_uid = Column(String(130),ForeignKey('users.uid'), primary_key=True)
     composite_cv_id = Column(String(130), primary_key=True)
     users = relationship("User", back_populates="cvlookups")
     
@@ -38,7 +38,7 @@ class User(Base):
     id = Column(Integer, primary_key=True, index=True) 
     name = Column(String(60), nullable=False)
     registration_date = Column(Date, nullable=False)
-    uid = Column(String(100), nullable=False)
+    uid = Column(String(130), nullable=False)
     email = Column(String(30), nullable=False)
     cvlookups = relationship("CVLookup", back_populates="users")
 
@@ -71,7 +71,7 @@ class Education(Base):
     __tablename__ = 'education'
 
     # id = Column(Integer, autoincrement=True)
-    user_uid = Column(String(120), primary_key=True,nullable=False)
+    user_uid = Column(String(130), primary_key=True,nullable=False)
     composite_cv_id_reference = Column(String(130), ForeignKey('cv_lookup.composite_cv_id'), nullable=False , primary_key=True)
     school = Column(String(100), nullable=False)
     degree = Column(String(100), nullable=False)
@@ -105,7 +105,7 @@ class EmploymentHistory(Base):
     __tablename__ = 'employment_history'
 
     # id = Column(Integer, autoincrement=True)
-    user_uid = Column(String(120), primary_key=True,nullable=False)
+    user_uid = Column(String(130), primary_key=True,nullable=False)
     composite_cv_id_reference = Column(String(130), ForeignKey('cv_lookup.composite_cv_id'), nullable=False , primary_key=True)
     job_title = Column(String(200), nullable=False)
     employer = Column(String(200), nullable=False)
@@ -140,7 +140,7 @@ class EmploymentReferences(Base):
     __tablename__ = 'employment_references'
 
     # id = Column(Integer, autoincrement=True)
-    user_uid = Column(String(120), primary_key=True,nullable=False)
+    user_uid = Column(String(130), primary_key=True,nullable=False)
     composite_cv_id_reference = Column(String(130), ForeignKey('cv_lookup.composite_cv_id'), nullable=False , primary_key=True)
     reference_full_name = Column(String(60), nullable=False)
     company = Column(String(60), nullable=False)
@@ -169,7 +169,7 @@ class Skills(Base):
     __tablename__ = 'skills'
 
     # id = Column(Integer, autoincrement=True)
-    user_uid = Column(String(120), primary_key=True,nullable=False)
+    user_uid = Column(String(130), primary_key=True,nullable=False)
     composite_cv_id_reference = Column(String(130), ForeignKey('cv_lookup.composite_cv_id'), nullable=False , primary_key=True)
     skill_name = Column(String(60), nullable=False)
     PrimaryKeyConstraint (user_uid, composite_cv_id_reference)
@@ -193,7 +193,7 @@ class UserLanguages(Base):
     __tablename__ = 'user_languages'
 
     # id = Column(Integer, autoincrement=True)
-    user_uid = Column(String(120), primary_key=True,nullable=False)
+    user_uid = Column(String(130), primary_key=True,nullable=False)
     composite_cv_id_reference = Column(String(130), ForeignKey('cv_lookup.composite_cv_id'), nullable=False , primary_key=True)
     user_language_label = Column(String(50), nullable=False)
     PrimaryKeyConstraint (user_uid, composite_cv_id_reference)
@@ -220,7 +220,7 @@ class WebsiteSocialLinks(Base):
     __tablename__ = 'website_social_links'
 
     # id = Column(Integer, autoincrement=True)
-    user_uid = Column(String(120), primary_key=True,nullable=False)
+    user_uid = Column(String(130), primary_key=True,nullable=False)
     composite_cv_id_reference = Column(String(130), ForeignKey('cv_lookup.composite_cv_id'), nullable=False , primary_key=True)
     label = Column(String(50), nullable=False)
     link = Column(String(200), nullable=False)

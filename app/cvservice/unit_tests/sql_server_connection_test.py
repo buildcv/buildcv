@@ -9,7 +9,6 @@ from database.sqlserver import engine
 
 
 
-# check sql server connection 
 def check_sql_server_connection():
     db = engine.connect()
     db.execute("SELECT 1")

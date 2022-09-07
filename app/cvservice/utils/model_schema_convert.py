@@ -5,10 +5,10 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 from data.models import User , Education
-from schemas.education import Education as EducationSchema 
+from schemas.education import  EducationSchema 
 
 
-def education_schema_model(education: EducationSchema):
+def education_schema_to_model(education: EducationSchema):
     print(education)
     education_model  = Education(
         user_uid=education.user_uid,

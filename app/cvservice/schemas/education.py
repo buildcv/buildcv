@@ -5,7 +5,7 @@ from pydantic import BaseModel
 
 
 # create education model 
-class Education(BaseModel):
+class EducationSchema(BaseModel):
     composite_cv_id_reference: str
     user_uid: str
     school: str

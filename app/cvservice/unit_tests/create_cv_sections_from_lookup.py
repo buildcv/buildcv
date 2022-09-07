@@ -13,6 +13,8 @@ from database.sqlserver import get_db
 
 from faker import Faker
 
+uid = '7gw9XjCdylXNe7eXoulitzVkaRq2'
+
 
 
 
@@ -25,7 +27,7 @@ def get_lookup_by_uid(uid):
 
 
 def create_education_entry():
-    lookup = get_lookup_by_uid('154b20df-a3da-497b-86c7-e8cd66520bdb')
+    lookup = get_lookup_by_uid(uid)
     composite_cv_id = lookup.composite_cv_id
     # create education model entry
     education = Education(
@@ -52,7 +54,7 @@ def create_education_entry():
 # create_education_entry()
 
 def create_employment_history_entry():
-    lookup = get_lookup_by_uid('154b20df-a3da-497b-86c7-e8cd66520bdb')
+    lookup = get_lookup_by_uid(uid)
     composite_cv_id = lookup.composite_cv_id
     # create employment model entry
     employment = EmploymentHistory(
@@ -84,7 +86,7 @@ def create_employment_reference_entity():
     company = faker.company()
 
 
-    lookup = get_lookup_by_uid('154b20df-a3da-497b-86c7-e8cd66520bdb')
+    lookup = get_lookup_by_uid(uid)
     composite_cv_id = lookup.composite_cv_id
     # create employment reference model entry
     employment_reference = EmploymentReferences(
@@ -106,7 +108,7 @@ def create_employment_reference_entity():
 
 
 def create_skills_entry():
-    lookup = get_lookup_by_uid('154b20df-a3da-497b-86c7-e8cd66520bdb')
+    lookup = get_lookup_by_uid(uid)
     composite_cv_id = lookup.composite_cv_id
     # create skills model entry
     skills = Skills(
@@ -124,7 +126,7 @@ def create_skills_entry():
 
 
 def create_languages_entry():
-    lookup = get_lookup_by_uid('154b20df-a3da-497b-86c7-e8cd66520bdb')
+    lookup = get_lookup_by_uid(uid)
     composite_cv_id = lookup.composite_cv_id
     # create languages model entry
     languages = UserLanguages(
@@ -142,7 +144,7 @@ def create_languages_entry():
 
 # create WebsiteSocialLinks entry
 def create_website_social_links_entry():
-    lookup = get_lookup_by_uid('154b20df-a3da-497b-86c7-e8cd66520bdb')
+    lookup = get_lookup_by_uid(uid)
     composite_cv_id = lookup.composite_cv_id
     # create website social links model entry
     website_social_links = WebsiteSocialLinks(
@@ -160,11 +162,11 @@ def create_website_social_links_entry():
 
 
 create_education_entry()
-create_employment_history_entry()
-create_website_social_links_entry()
-create_languages_entry()
-create_skills_entry()
-create_employment_reference_entity()
+# create_employment_history_entry()
+# create_website_social_links_entry()
+# create_languages_entry()
+# create_skills_entry()
+# create_employment_reference_entity()
 
 
 
