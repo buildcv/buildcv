@@ -2,19 +2,19 @@ create table users (
     id integer identity (1,1),
     name varchar(60) not null ,
     registration_date date not null ,
-    uid varchar(130) not null primary key ,
+    uid varchar(130) primary key  ,
     email varchar(30) not null ,
 
 )
 
-GO
+
+
 create table cv_lookup
 (
     id              integer identity (1,1),
     user_uid        varchar(130) not null,
     user_cv_count   integer      not null,
-    composite_cv_id varchar(130) not null
-    primary key (composite_cv_id),
+    composite_cv_id varchar(130) primary key ,
     foreign key (user_uid) references users (uid)
 )
 
@@ -72,6 +72,8 @@ create table employment_references
     composite_cv_id_reference varchar(130),
     reference_full_name       varchar(60),
     company                   varchar(60),
+    reference_phone_number varchar(50) ,
+    reference_email varchar(60)
     foreign key (composite_cv_id_reference) references cv_lookup (composite_cv_id)
 
 

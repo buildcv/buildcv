@@ -23,7 +23,8 @@ def create_cv_lookup():
     user_uid = user.uid
     cv_lookup = CVLookup(
         composite_cv_id=composite_cv_id,
-        user_uid=user_uid)
+        user_uid=user_uid
+        )
 
     db = next(get_db())
     db.add(cv_lookup)
@@ -32,9 +33,8 @@ def create_cv_lookup():
 
 
     
-
-
 create_cv_lookup()
+
 
 
 

@@ -161,12 +161,12 @@ def create_website_social_links_entry():
     pass
 
 
-create_education_entry()
-# create_employment_history_entry()
-# create_website_social_links_entry()
-# create_languages_entry()
-# create_skills_entry()
-# create_employment_reference_entity()
+# create_education_entry()
+create_employment_history_entry()
+create_website_social_links_entry()
+create_languages_entry()
+create_skills_entry()
+create_employment_reference_entity()
 
 
 

@@ -8,6 +8,8 @@ from database.sqlserver import get_db
 import random 
 
 
+
+
 # search users by name
 def search_users_by_name(name):
     db = next(get_db())
@@ -104,4 +106,4 @@ def get_n_users(n):
 
 
 
-get_n_users(10)
+print(get_random_user().uid)
