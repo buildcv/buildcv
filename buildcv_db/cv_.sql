@@ -13,7 +13,7 @@ create table cv_lookup
 (
     id              integer identity (1,1),
     user_uid        varchar(130) not null,
-    user_cv_count   integer      not null,
+    user_cv_count   integer      ,
     composite_cv_id varchar(130) primary key ,
     foreign key (user_uid) references users (uid)
 )
