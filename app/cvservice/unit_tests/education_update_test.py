@@ -66,7 +66,6 @@ def update_education_start_date(composite_cv_id_reference , start_date):
 def update_education_end_date(composite_cv_id_reference , end_date):
  db = next(get_db())
  data = db.query(Education).filter(Education.composite_cv_id_reference == composite_cv_id_reference)
-                        # print data
  data.update({Education.end_date: end_date})
  db.commit()
  db.close()

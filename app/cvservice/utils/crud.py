@@ -54,27 +54,3 @@ def get_lookup_by_uid(uid):
 
 
 
-def create_education_entry(education: Education):
-
-    # convert education schema to education model
-    education_model = model_schema_convert.education_schema_to_model(education)
-    # insert education model into database
-    db = next(get_db())
-    db.add(education_model)
-    db.commit()
-    db.close()    
-    return education 
-
-
-
-def update_education_entry(education: Education):
-
-    # convert education schema to education model
-    education_model = model_schema_convert.education_schema_to_model(education)
-    # update education model into database
-    db = next(get_db())
-    result = db.query(Education).filter(Education.composite_cv_id_reference == education.composite_cv_id_reference)
-    # print the query result 
-    print(result)
-
-    return education_model
