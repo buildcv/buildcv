@@ -37,7 +37,7 @@ def create_education_entry():
         description='I am a student of the University of Pretoria',
         start_date='2019-01-01',
         end_date='2019-12-31',
-        user_uid = '154b20df-a3da-497b-86c7-e8cd66520bdb'
+        user_uid = uid
         
     )
 
@@ -161,7 +161,7 @@ def create_website_social_links_entry():
     pass
 
 
-# create_education_entry()
+create_education_entry()
 create_employment_history_entry()
 create_website_social_links_entry()
 create_languages_entry()
