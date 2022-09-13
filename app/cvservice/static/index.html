@@ -110,7 +110,6 @@ onAuthStateChanged(auth, (googleUser) => {
 
 
     const userDiv = document.createElement('div')
-    // center the div
     userDiv.style.textAlign = 'center'
     userDiv.innerHTML = `
      <div id="user-info">
@@ -122,9 +121,7 @@ onAuthStateChanged(auth, (googleUser) => {
 
 
   } else {
-    // User is signed out
-    // ...
-    // remove user div if it exists
+  
     const userDiv = document.getElementById('user-info')
     if (userDiv) {
         userDiv.remove()
@@ -136,10 +133,8 @@ onAuthStateChanged(auth, (googleUser) => {
 function signIn(){
     signInWithPopup(auth, provider)
   .then((result) => {
-    // This gives you a Google Access Token. You can use it to access the Google API.
     const credential = GoogleAuthProvider.credentialFromResult(result);
     const token = credential.accessToken;
-    // The signed-in user info.
     const googleUser = result.user;
     const user = {}
 
@@ -156,12 +151,9 @@ function signIn(){
 
     
   }).catch((error) => {
-    // Handle Errors here.
     const errorCode = error.code;
     const errorMessage = error.message;
-    // The email of the user's account used.
     const email = error.customData.email;
-    // The AuthCredential type that was used.
     const credential = GoogleAuthProvider.credentialFromError(error);
     // ...
   });

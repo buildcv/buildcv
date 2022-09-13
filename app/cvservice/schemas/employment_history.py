@@ -36,7 +36,7 @@ class EmploymentHistory_city(BaseModel):
     cv_id: str
     city: str
 
-
+ 
 class EmploymentHistoryDel(BaseModel):
     cv_id: str
 

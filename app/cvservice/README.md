@@ -18,3 +18,15 @@ cd
 
 ```
 
+---
+# database name 
+resume
+
+
+# 
+-- WSL 2 // windows 
+-- VS code 
+-- Docker Desktop 
+-- VS Code Docker Extention
+-- Remote Container Extention 
+-- Python Extention for VS Code .  

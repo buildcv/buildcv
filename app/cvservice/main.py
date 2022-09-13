@@ -27,10 +27,6 @@ app.mount("/", StaticFiles(directory="static", html=True), name="static")
 
 
 
-@app.get("/groups")
-async def get_groups():
-    return 'my group'
-    pass 
 
 
 @app.get("/users/",response_model=list[UserBase])
@@ -40,7 +36,7 @@ async def get_users():
 
 
 
-@app.post("/users/",response_model=UserBase  )
+@app.post("/users/",response_model=UserBase , status_code=201 )
 async def create_new_user(user: UserBase):
     print(user)
 

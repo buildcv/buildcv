@@ -106,4 +106,4 @@ def get_n_users(n):
 
 
 
-print(get_random_user().uid)
+get_all_users()
